@@ -1,0 +1,428 @@
+/* колір основного тексту (primary-text-color) #212121
+колір акценту (accent-color) #2196F3
+колір доругорядного тексту (secondary-text-color) #757575 
+колір тексту логотифу в хедері (header-logo-color) #000000
+колір контактів у футері (contact-footer-color) rgba(255, 255, 255, 0.6);
+
+колір фону сайту (main-bg-color) #ffffff
+колір фону героя і футера (secondary-bg-color) #2F303A
+колір фону команди і кнопок портфоліо (secondary-accent-bg-color) #F5F4FA
+
+колір лінії хедера (header-border-color) #ECECEC
+колір лінії в портфоліо (portfolio-stroke) #EEEEEE
+
+шрифти: Raleway 700 (логотип), Roboto 700, 500, 900, 400 (весь текст сайту)*/
+
+:root {
+    --primary-text-color: #212121;
+    --accent-color: #2196F3;
+    --secondary-text-color: #757575;
+    --primary-white-color: #ffffff;
+    --header-logo-color: #000000;
+    --contact-footer-color: rgba(255, 255, 255, 0.6);
+
+    --main-bg-color: #ffffff;
+    --secondary-bg-color: #2F303A;
+    --secondary-accent-bg-color: #F5F4FA;
+
+    --header-border-color: #ECECEC;
+    --portfolio-stroke: #eeeeee;
+}
+
+/* Скидання браузерних налаштувань */
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--primary-text-color);
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+.list {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.link {
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+/* Секції */
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+/* Контейнер */
+
+.container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+  
+    margin-left: auto;
+    margin-right: auto;
+
+    /* outline: 1px solid red; */
+}
+
+.container.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Візуально прихований заголовок */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* Хедер */
+
+.header {
+    border-bottom: 1px solid var(--header-border-color);
+}
+
+/* Логотип */
+
+.logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
+    font-family: 'Raleway', sans-serif;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+.logo-header {
+    color: var(--header-logo-color);
+}
+
+.logo-footer {
+    color: var(--primary-white-color);
+}
+
+.footer .logo {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    margin-bottom: 28px;
+}
+
+/* Навігація по сайту */
+
+.site-nav {
+    display: flex;
+}
+
+.site-nav .item + .item {
+    margin-left: 50px;
+}
+
+.site-nav .link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.link:hover,
+.link:focus, 
+.current {
+color: var(--accent-color);
+}
+
+/* Контакти */
+
+.contacts {
+    display: flex;
+    margin-left: auto;
+}
+
+.contact-header {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color:var(--secondary-text-color);
+}
+
+.contact-header:hover,
+.contact-header:focus {
+    color: var(--accent-color);
+}
+
+.contacts .item + .item {
+margin-left: 40px;
+}
+
+.contact-footer {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-white-color);
+}
+
+.address > .item:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.contact-footer.item {
+    color: var(--contact-footer-color);
+}
+
+.contact-footer:hover,
+.contact-footer:focus {
+    color: var(--accent-color);
+}
+
+/* Ефективні рішення для вашого бізнесу, секція герой */
+
+.hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+    background-color: var(--secondary-bg-color);
+}
+
+.hero-title {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 796px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+}
+
+.hero-button {
+    padding: 10px 24px;
+    background-color: var(--accent-color);
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: var(--primary-white-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Переваги співпраці */
+
+.section.advantages-section {
+    padding-bottom: 0;
+}
+
+.advantages {
+    display: flex;
+    margin-left: -30px;
+}
+
+.advantages-item {
+    flex-basis: calc(100% / 4);
+    margin-left: 30px;
+}
+
+.advantages-title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.advantages-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
+}
+
+/* Чим ми займаємося */
+
+.work-img {
+    display: flex;
+    margin-left: -30px;   
+}
+
+.work-img > .item {
+    margin-left: 30px;
+}
+
+.title {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* Наша команда */
+
+.team {
+    background-color: var(--secondary-accent-bg-color);
+}
+
+.team-cards {
+    display: flex;
+    margin-left: -30px;;
+}
+
+.team-cards > .item {
+    background-color: var(--main-bg-color);
+    margin-left: 30px;
+}
+
+.team-disc {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.team-name {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.team-prof {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
+}
+
+/* Футер */
+
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--secondary-bg-color);
+}
+
+/* Сторінка Портфоліо */
+
+/* Реалізовані проєкти */
+
+.button {
+    padding: 6px 22px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--secondary-accent-bg-color);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.projects-filter {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.projects-filter .item + .item {
+    margin-left: 8px;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects-list > .item {
+    width: calc((100% - 60px) / 3);
+}
+
+.projects-list > .item:not(:nth-last-child(-n + 3)){
+    margin-bottom: 30px;
+}
+
+.projects-list > .item:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.project-disc {
+    padding: 20px 24px;
+    border: 1px solid var(--portfolio-stroke);
+    border-top: none;
+}
+
+.projects-img {
+    margin-bottom: 0px;
+    display: block;
+}
+
+.projects-name {
+    margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--primary-text-color);
+}
+
+.projects-type {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
+}
