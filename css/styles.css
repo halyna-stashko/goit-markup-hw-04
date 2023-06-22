@@ -217,7 +217,7 @@ fill: #757575;
 }
 
 .icon-contacts:hover {
-fill: var(--accent-color);
+background-color: var(--accent-color);
 }
 
 /* Ефективні рішення для вашого бізнесу, секція герой */
