@@ -212,7 +212,9 @@ margin-left: 40px;
     color: var(--accent-color);
 }
 
-
+.icon-contacts:hover {
+fill: var(--accent-color);
+}
 
 /* Ефективні рішення для вашого бізнесу, секція герой */
 
