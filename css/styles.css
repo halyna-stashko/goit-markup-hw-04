@@ -212,6 +212,10 @@ margin-left: 40px;
     color: var(--accent-color);
 }
 
+.icon-contacts {
+fill: #757575;
+}
+
 .icon-contacts:hover {
 fill: var(--accent-color);
 }
