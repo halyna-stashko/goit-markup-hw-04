@@ -210,7 +210,7 @@ margin-left: 40px;
 .contact-footer:hover,
 .contact-footer:focus {
     color: var(--accent-color);
-    background-color: var(--accent-color);
+    fill: var(--accent-color);
 }
 
 .icon-contacts {
