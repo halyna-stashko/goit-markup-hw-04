@@ -210,17 +210,14 @@ margin-left: 40px;
 .contact-footer:hover,
 .contact-footer:focus {
     color: var(--accent-color);
-    fill: var(--accent-color);
 }
 
-.icon-contacts {
-fill: #757575;
+.icon-item {
+    fill: currentColor;
 }
-
 
 
 /* Ефективні рішення для вашого бізнесу, секція герой */
-
 .hero {
     padding-top: 200px;
     padding-bottom: 200px;
@@ -295,6 +292,20 @@ fill: #757575;
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
 }
+
+.icon-advantages {
+    width: 270px;
+    height: 120px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: var(--secondary-accent-bg-color);
+}
+
+/* .icon-item {
+    object-position: 100px 25px;
+} */
 
 /* Чим ми займаємося */
 
