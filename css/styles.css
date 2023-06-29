@@ -226,7 +226,6 @@ margin-left: 40px;
     margin-right: auto;
     max-width: 1600px;
     height: 600px;
-    /* background-color: var(--secondary-bg-color); */
     background-image: linear-gradient( to right,  var(--overlay-color), var(--overlay-color)), url(../images/hero-img.jpg) ;
     background-repeat: no-repeat;
     background-position: center;
@@ -338,6 +337,7 @@ margin-left: 40px;
 .team-cards > .item {
     background-color: var(--main-bg-color);
     margin-left: 30px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .team-disc {
