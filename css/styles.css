@@ -172,9 +172,13 @@ color: var(--accent-color);
 .contacts {
     display: flex;
     margin-left: auto;
+    justify-content: center;
 }
 
 .contact-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
     line-height: 1.14;
@@ -185,6 +189,10 @@ color: var(--accent-color);
 .contact-header:hover,
 .contact-header:focus {
     color: var(--accent-color);
+}
+
+.contact-header > .icon-item {
+    margin-right: 10px;
 }
 
 .contacts .item + .item {
@@ -294,11 +302,11 @@ margin-left: 40px;
 }
 
 .icon-advantages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 270px;
     height: 120px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    text-align: center;
     margin-bottom: 30px;
     background-color: var(--secondary-accent-bg-color);
 }
@@ -367,18 +375,18 @@ margin-left: 40px;
 .social-list {
     display: flex;
     justify-content: center;
-    padding-left: 32px;
-    padding-right: 32px;
 }
 
 .social-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 44px;
     height: 44px;
-    padding: 12px;
     color: var(--social-label-bg-color);
 }
 
-.social-label:not(:last-child) {
+.social-list > .item:not(:last-child):not(:last-child) {
     margin-right: 10px;
 }
 
@@ -437,15 +445,11 @@ margin-left: 40px;
 
 .container.footer-block {
     display: flex;
+    align-items: baseline;
 }
 
 .footer-social > .social-list {
     padding: 0;
-}
-
-.footer-social {
-    padding-top: 12px;
-    padding-bottom: 40px;
 }
 
 .social-item:not(:last-child) {
@@ -502,7 +506,7 @@ margin-left: 40px;
 .button:focus {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
 }
 
 .projects-filter {
