@@ -8,6 +8,10 @@
 колір фону героя і футера (secondary-bg-color) #2F303A
 колір фону затінення героя (overlay-color) rgba(47, 48, 58, 0.4)
 колір фону команди і кнопок портфоліо (secondary-accent-bg-color) #F5F4FA
+колір фону іконок соц. мереж (social-label-bg-color) #afb1b8
+колір фону підписів картинок у розділі Чим ми займаємось (work-img-text-bg-color) rgba(47, 48, 58, 0.80)
+колір фону при ховері на картинку в реалізованих проєктах: (project-img-hover-bg-color) rgba(33, 150, 243, 0.9);
+колір фону бекдропа модального вікна (backdrop-bg-color:) rgba(0, 0, 0, 0.20)
 
 колір лінії хедера (header-border-color) #ECECEC
 колір лінії в портфоліо (portfolio-stroke) #EEEEEE
@@ -27,9 +31,14 @@
     --overlay-color: rgba(47, 48, 58, 0.4);
     --secondary-accent-bg-color: #F5F4FA;
     --social-label-bg-color:#afb1b8;
+    --work-img-text-bg-color: rgba(47, 48, 58, 0.80);
+    --project-img-hover-bg-color: rgba(33, 150, 243, 0.9);
+    --backdrop-bg-color: rgba(0, 0, 0, 0.20);
 
     --header-border-color: #ECECEC;
     --portfolio-stroke: #eeeeee;
+
+    --cubik-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Скидання браузерних налаштувань */
@@ -159,12 +168,30 @@ img {
 .site-nav .link {
     padding-top: 32px;
     padding-bottom: 32px;
+
+    transition: color 250ms var(--cubik-bezier);
 }
 
 .link:hover,
 .link:focus, 
 .current {
 color: var(--accent-color);
+}
+
+.current {
+    position: relative;
+    display: block;
+}
+
+.current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
 }
 
 /* Контакти */
@@ -184,6 +211,7 @@ color: var(--accent-color);
     line-height: 1.14;
     letter-spacing: 0.02em;
     color:var(--secondary-text-color);
+    transition: color 250ms var(--cubik-bezier);
 }
 
 .contact-header:hover,
@@ -196,7 +224,7 @@ color: var(--accent-color);
 }
 
 .contacts .item + .item {
-margin-left: 40px;
+    margin-left: 40px;
 }
 
 .contact-footer {
@@ -206,6 +234,7 @@ margin-left: 40px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--primary-white-color);
+    transition: color 250ms var(--cubik-bezier);
 }
 
 .address > .item:not(:last-child) {
@@ -269,6 +298,61 @@ margin-left: 40px;
     cursor: pointer;
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backdrop-bg-color);
+    opacity: 1;
+    z-index: 999;
+
+    transition: opacity 250ms var(--cubik-bezier);
+}
+
+.backdrop.is-hidden .modal {
+ transform: translate(-50%, 100%) scale(2);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    min-width: 528px;
+    min-height: 581px;
+    
+    background-color: var(--main-bg-color);
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+ 
+    transition: transform 250ms var(--cubik-bezier), box-shadow 250ms var(--cubik-bezier);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: var(--main-bg-color);
+}
+
 /* Переваги співпраці */
 
 .section.advantages-section {
@@ -320,6 +404,7 @@ margin-left: 40px;
 }
 
 .work-img > .item {
+    position: relative;
     margin-left: 30px;
 }
 
@@ -329,6 +414,28 @@ margin-left: 40px;
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
+}
+
+.work-disc {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+
+    background-color: var(--work-img-text-bg-color);
+}
+
+.work-text {
+    color: var(--primary-white-color);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
 }
 
 /* Наша команда  */
@@ -384,6 +491,9 @@ margin-left: 40px;
     width: 44px;
     height: 44px;
     color: var(--social-label-bg-color);
+    border-radius: 50%;
+
+    transition: color 250ms var(--cubik-bezier), background-color 250ms var(--cubik-bezier);
 }
 
 .social-list > .item:not(:last-child):not(:last-child) {
@@ -415,6 +525,8 @@ margin-left: 40px;
     height: 92px;
     border-radius: 4px;
     border: 1px solid var(--social-label-bg-color);
+
+    transition: color 250ms var(--cubik-bezier), border-color 250ms var(--cubik-bezier);
 }
 
 .clients-item:not(:last-child) {
@@ -474,6 +586,8 @@ margin-left: 40px;
     color: var(--primary-white-color);
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+
+    transition: background-color 250ms var(--cubik-bezier), color 250ms var(--cubik-bezier);
 }
 
 .social-icon:hover,
@@ -500,6 +614,9 @@ margin-left: 40px;
     letter-spacing: 0.03em;
     color: var(--primary-text-color);
     cursor: pointer;
+    box-shadow: none;
+
+    transition: background-color 250ms var(--cubik-bezier), color 250ms var(--cubik-bezier), box-shadow 250ms var(--cubik-bezier);
 }
 
 .button:hover,
@@ -536,9 +653,48 @@ margin-left: 40px;
     margin-right: 30px;
 }
 
+.project {
+    transition: box-shadow 250ms var(--cubik-bezier);
+}
+
 .project:hover,
 .project:focus {
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translatey(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--project-img-hover-bg-color);
+
+    transition: transform 250ms var(--cubik-bezier);
+}
+
+.project:hover .project-hover,
+.project:focus .project-hover {
+    transform: translateY(0);
+}
+
+.project-text {
+    width: 322px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.54px;
+
 }
 
 .project-disc {
